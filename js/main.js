@@ -44,8 +44,10 @@ startBtn.addEventListener('click', () => {
 
 });
 
-
-
+// Restart Button Cleaning Reset
+restartBtn.addEventListener('click', () => {
+    display.innerHTML = 0;
+})
 
 // Functions - Gen random number from 1 to 100
 function genRandNumber(min, max) {
