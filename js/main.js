@@ -12,10 +12,18 @@ let numbers = [];
 genRandNumber (1, 100);
 
 startBtn.addEventListener('click', () => {
-
+    // 5 Numbers on screen generator
     numbers = genRandNumber (1, 100);
+    // Writing into initial display zero
     display.innerText = numbers;
+    // Creating timer after showing 5 numbers
+    setTimeout(() => {
+    alert('Time flies but you are the pilot! You have seen 5 numbers, do you remember all of them?')
+    }, 3000);
+    
+    
 })
+
 
 // Functions - Gen random number from 1 to 100
 function genRandNumber(min, max) {
