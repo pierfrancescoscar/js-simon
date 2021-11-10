@@ -8,6 +8,7 @@ const startBtn = document.querySelector('.start');
 const restartBtn = document.querySelector('.restart')
 let numbers = [];
 let userNumbers = [];
+let result = '';
 
 // Functions Evocations
 genRandNumber (1, 100);
@@ -23,7 +24,7 @@ startBtn.addEventListener('click', () => {
     setTimeout(() => {
     alert('Time flies but you are the pilot! You have seen 5 numbers, do you remember all of them?')
     display.innerHTML = '';
-    }, 3000);
+    }, 2999);
 
     // Ask to the user 5 times numbers that he remembers
     setTimeout (()=> {
@@ -37,10 +38,9 @@ startBtn.addEventListener('click', () => {
       })
       console.log('equal numbers: ', correctNumbers);
 
+      result = alert(`You guessed exactly ${correctNumbers}`);
 
     }, 3001)
-
-
 
 });
 
