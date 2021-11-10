@@ -7,6 +7,7 @@ const display = document.querySelector('.display');
 const startBtn = document.querySelector('.start');
 const restartBtn = document.querySelector('.restart')
 let numbers = [];
+let userNumbers = [];
 
 // Functions Evocations
 genRandNumber (1, 100);
@@ -14,16 +15,34 @@ genRandNumber (1, 100);
 startBtn.addEventListener('click', () => {
     // 5 Numbers on screen generator
     numbers = genRandNumber (1, 100);
+
     // Writing into initial display zero
     display.innerText = numbers;
+
     // Creating timer after showing 5 numbers
     setTimeout(() => {
     alert('Time flies but you are the pilot! You have seen 5 numbers, do you remember all of them?')
     display.innerHTML = '';
-    }, 3000);    
-})
+    }, 3000);
+
+    // Ask to the user 5 times numbers that he remembers
+    setTimeout (()=> {
+        for (let i = 0; i < 5; i++) {
+            userNumbers.push(parseInt(prompt('Please, enter the numbers that you remember.')));
+        }
+        console.log('entered numbers: ', userNumbers);
+        // Checking numbers entered vs numbers previously generated
+        const correctNumbers = userNumbers.filter((num) => {
+        return numbers.includes(num);
+      })
+      console.log('equal numbers: ', correctNumbers);
 
 
+    }, 3001)
+
+
+
+});
 
 
 
