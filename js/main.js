@@ -3,9 +3,28 @@
 // Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
 
 // Refs
+const display = document.querySelector('.display');
+const startBtn = document.querySelector('.start');
+const restartBtn = document.querySelector('.restart')
+let numbers = [];
+
+// Functions Evocations
+genRandNumber (1, 100);
+
+startBtn.addEventListener('click', () => {
+
+    numbers = genRandNumber (1, 100);
+    display.innerText = numbers;
+})
 
 // Functions - Gen random number from 1 to 100
+function genRandNumber(min, max) {
 
-function genRandNumber (min, max) {
-    return Math.floor(Math.random() * max) + min;
+    let numbers = [];
+
+    for (let i = 0; i < 5; i++) {
+        numbers.push(Math.floor(Math.random() * max) + min);
+    }
+
+    return numbers;
 }
