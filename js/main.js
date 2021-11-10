@@ -32,18 +32,18 @@ startBtn.addEventListener('click', () => {
             userNumbers.push(parseInt(prompt('Please, enter the numbers that you remember.')));
         }
         console.log('entered numbers: ', userNumbers);
+
         // Checking numbers entered vs numbers previously generated
         const correctNumbers = userNumbers.filter((num) => {
         return numbers.includes(num);
       })
       console.log('equal numbers: ', correctNumbers);
 
+        // Our matching result
       result = alert(`You guessed exactly ${correctNumbers}`);
-
     }, 3001)
-
+    
 });
-
 // Restart Button Cleaning Reset
 restartBtn.addEventListener('click', () => {
     display.innerHTML = 0;
