@@ -19,10 +19,13 @@ startBtn.addEventListener('click', () => {
     // Creating timer after showing 5 numbers
     setTimeout(() => {
     alert('Time flies but you are the pilot! You have seen 5 numbers, do you remember all of them?')
-    }, 3000);
-    
-    
+    display.innerHTML = '';
+    }, 3000);    
 })
+
+
+
+
 
 
 // Functions - Gen random number from 1 to 100
